@@ -2,9 +2,6 @@ const mongoose = require("mongoose");
 const app = require("./app");
 
 const { DB_HOST, PORT = 3000 } = process.env;
-// const DB_HOST =
-//   "mongodb+srv://YuliiaM:fakPouyL7oSNyZTG@cluster0.lt0up3y.mongodb.net/db-contacts?retryWrites=true&w=majority";
-// const PORT = 3000;
   
 mongoose.set("strictQuery", true);
 
