@@ -11,11 +11,19 @@ router.post(
   controller.register
 );
 
+router.post(
+  "/users/verify",
+  validation(schemas.email),
+  controller.resendVerifyEmail
+);
+
 router.post("/users/login", validation(schemas.login), controller.login);
 
 router.post("/users/logout", authenticate, controller.logout);
 
 router.get("/users/current", authenticate, controller.current);
+
+router.get("/users/verify/:verificationToken", controller.verifyEmail);
 
 router.patch(
   "/users",
